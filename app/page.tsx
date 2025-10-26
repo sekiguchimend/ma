@@ -44,7 +44,7 @@ export default function Home() {
       {/* Section 1: Hero Section */}
       <section className="relative bg-gradient-to-br from-[#0C3765] via-[#1a5080] to-[#061a2e] text-white overflow-hidden min-h-[600px]">
         {/* Person Image - Centered */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[420px] h-[480px] pointer-events-none z-0">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[520px] h-[580px] pointer-events-none z-0">
           <img
             src="/woman2.png"
             alt="女性の画像"
@@ -53,11 +53,11 @@ export default function Home() {
         </div>
 
         <div className="max-w-[1400px] mx-auto px-8 py-12 lg:py-16">
-          <div className="grid lg:grid-cols-[1fr_480px] gap-12 items-start">
+          <div className="grid lg:grid-cols-[1fr_400px] gap-12 items-start">
             {/* Left Content */}
             <div className="relative pt-8">
               <h1 className="text-[64px] lg:text-[72px] font-bold mb-6 leading-[1.4] tracking-tight">
-                アプリで事業を<br />
+                アプリ事業を<br />
                 売却・買収する<br />
                 <span className="text-[110px] lg:text-[130px] inline-block leading-[1]">最</span>適解
               </h1>
@@ -84,7 +84,7 @@ export default function Home() {
             </div>
 
             {/* Right Form */}
-            <div className="bg-white rounded-[20px] p-9 shadow-[0_8px_30px_rgba(50,50,50,0.12)] mt-8">
+            <div className="bg-white rounded-[20px] p-6 shadow-[0_8px_30px_rgba(50,50,50,0.12)] mt-8">
               <div className="flex gap-6 mb-8 border-b border-gray-200">
                 <button 
                   onClick={() => handleTabChange('email')}
@@ -260,7 +260,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-[450px_1fr] gap-16 items-center">
             {/* Left - Title and App Icons */}
             <div>
-              <h2 className="text-[42px] lg:text-[48px] font-bold leading-[1.3] mb-12 text-center">
+              <h2 className="text-[42px] lg:text-[48px] font-bold leading-[1.3] mb-12 text-center relative z-20">
                 企業が選ぶ<br />
                 AppExit
               </h2>
@@ -412,24 +412,51 @@ export default function Home() {
             <div className="bg-white rounded-3xl p-8 border-2 border-gray-300">
               <div className="flex items-start gap-3 mb-6">
                 <span className="text-5xl font-bold text-[#0C3765]">1.</span>
-                <h3 className="text-xl font-bold pt-2">自社開発実績による品質担保</h3>
+                <h3 className="text-xl font-bold pt-2">迅速開発・納品</h3>
               </div>
-              <div className="flex justify-center">
-                <div className="w-32 h-32 bg-[#F2F4F8] rounded-full flex items-center justify-center">
-                  <img src="/1.png" alt="業界最安級手数料" className="w-full h-full object-cover rounded-full" />
-                </div>
-              </div>
+               <div className="flex justify-center">
+                 <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+
+                   <div className="text-center">
+                     <div className="flex flex-row items-baseline justify-center gap-1">
+                       <span className="text-4xl font-bold font-noto-sans-jp">最短</span>
+                       <div className="relative">
+                         <span className="text-7xl font-bold font-noto-sans-jp relative z-20">2</span>
+                         <span className="text-4xl font-bold font-noto-sans-jp relative z-20">週間</span>
+                         {/* 黄色い下線 - 2週間のみ */}
+                         <div className="absolute bottom-0 left-0 right-0 h-3 bg-yellow-400/70 z-10"></div>
+                       </div>
+                     </div>
+                     <div className="text-3xl font-bold font-noto-sans-jp mt-1">
+                       以内納品
+                     </div>
+                   </div>
+                 </div>
+               </div>
             </div>
 
             {/* Card 2 */}
             <div className="bg-white rounded-3xl p-8 border-2 border-gray-300">
               <div className="flex items-start gap-3 mb-6">
                 <span className="text-5xl font-bold text-[#0C3765]">2.</span>
-                <h3 className="text-xl font-bold pt-2">POC〜本格事業化まで対応</h3>
+                <h3 className="text-xl font-bold pt-2">高い成約実績</h3>
               </div>
               <div className="flex justify-center">
-                <div className="w-32 h-32 bg-[#F2F4F8] rounded-full flex items-center justify-center relative">
-                  <img src="/2.png" alt="スピード査定" className="w-full h-full object-cover rounded-full" />
+                <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+                  <div className="text-center">
+                    <div className="flex flex-row items-baseline justify-center gap-1">
+                      <span className="text-4xl font-bold font-noto-sans-jp">成約率</span>
+                      <div className="relative">
+                        <span className="text-7xl font-bold font-noto-sans-jp relative z-20">7</span>
+                        <span className="text-4xl font-bold font-noto-sans-jp relative z-20">倍UP</span>
+                        {/* 黄色い下線 - 7倍UPのみ */}
+                        <div className="absolute bottom-0 left-0 right-0 h-3 bg-yellow-400/70 z-10"></div>
+                      </div>
+                    </div>
+                    <div className="text-3xl font-bold font-noto-sans-jp mt-1">
+                      事例多数
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -444,8 +471,20 @@ export default function Home() {
                 </h3>
               </div>
               <div className="flex justify-center">
-                <div className="w-32 h-32 bg-[#F2F4F8] rounded-full flex items-center justify-center">
-                  <img src="/3.png" alt="専門アドバイザー" className="w-full h-full object-cover rounded-full" />
+                <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+                  <div className="text-center">
+                    <div className="flex flex-row items-baseline justify-center gap-1">
+                      <div className="relative">
+                        <span className="text-7xl font-bold font-noto-sans-jp relative z-20">24</span>
+                        <span className="text-4xl font-bold font-noto-sans-jp relative z-20">時間以内</span>
+                        {/* 黄色い下線 - 24時間以内のみ */}
+                        <div className="absolute bottom-0 left-0 right-0 h-3 bg-yellow-400/70 z-10"></div>
+                      </div>
+                    </div>
+                    <div className="text-3xl font-bold font-noto-sans-jp mt-1">
+                      迅速対応
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
