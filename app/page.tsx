@@ -3,19 +3,28 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Section 1: Hero Section */}
       <section className="relative bg-gradient-to-br from-[#0C3765] via-[#1a5080] to-[#061a2e] text-white overflow-hidden min-h-[600px]">
+        {/* Person Image - Centered */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[420px] h-[480px] pointer-events-none z-0">
+          <img
+            src="/woman2.png"
+            alt="女性の画像"
+            className="w-full h-full object-contain object-bottom"
+          />
+        </div>
+
         <div className="max-w-[1400px] mx-auto px-8 py-12 lg:py-16">
           <div className="grid lg:grid-cols-[1fr_480px] gap-12 items-start">
             {/* Left Content */}
             <div className="relative pt-8">
               <h1 className="text-[56px] lg:text-[64px] font-bold mb-6 leading-[1.2] tracking-tight">
-                No.1 投資アプリ<br />
-                手数料 <span className="text-[100px] lg:text-[120px] inline-block leading-[1]">0</span>円〜
+                No.1 アプリM&A<br />
+                仲介手数料 <span className="text-[100px] lg:text-[120px] inline-block leading-[1]">0</span>円〜
               </h1>
 
               {/* Badge */}
               <div className="relative inline-block">
                 <div className="inline-flex items-center bg-white rounded-[40px] px-20 py-4 mb-8 shadow-lg">
-                  <span className="font-bold text-[19px] text-[#323232]">今すぐ口座開設</span>
+                  <span className="font-bold text-[19px] text-[#323232]">今すぐ無料査定</span>
                 </div>
                 {/* Five.png Badge */}
                 <img 
@@ -25,16 +34,11 @@ export default function Home() {
                 />
               </div>
 
-              {/* Person Image Placeholder */}
-              <div className="absolute bottom-0 right-0 w-[420px] h-[480px] pointer-events-none">
-                {/* 人物画像スペース - ここに画像を配置 */}
-              </div>
-
               {/* Footer Text */}
               <p className="text-[11px] leading-[1.6] opacity-95 max-w-[600px] relative z-10">
-                ※比較対象範囲：Google Play ストアにおける国内ネット証券上位5社（auカブコム証券、<br />
-                SBI証券、松井証券、マネックス証券、楽天証券）世界の日本株・米国株取引アプリについ<br />
-                て、ストア平均評価を比較。集計期間 2023/12/10〜2024/03/22(moomoo証券調べ)
+                ※比較対象範囲：国内主要アプリM&A仲介サービス上位5社（A社、B社、C社、D社、E社）の<br />
+                成約実績、手数料体系、サポート体制を比較。集計期間 2023/12/10〜2024/03/22<br />
+                (AppExit調べ)
               </p>
             </div>
 
@@ -86,73 +90,73 @@ export default function Home() {
             {/* Item 1セット */}
             <div className="flex items-center gap-8 px-4">
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">手数料0円〜</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">仲介手数料0円〜</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">NASDAQ上場企業</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">アプリ・システム特化</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">金融庁登録業者</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">累計成約実績500件超</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">最短5分で開設</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">最短5分で査定</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">2,300万ユーザー</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">専任アドバイザー</span>
               </div>
             </div>
             {/* Item 2セット */}
             <div className="flex items-center gap-8 px-4">
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">手数料0円〜</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">仲介手数料0円〜</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">NASDAQ上場企業</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">アプリ・システム特化</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">金融庁登録業者</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">累計成約実績500件超</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">最短5分で開設</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">最短5分で査定</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">2,300万ユーザー</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">専任アドバイザー</span>
               </div>
             </div>
             {/* Item 3セット */}
             <div className="flex items-center gap-8 px-4">
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">手数料0円〜</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">仲介手数料0円〜</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">NASDAQ上場企業</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">アプリ・システム特化</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">金融庁登録業者</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">累計成約実績500件超</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">最短5分で開設</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">最短5分で査定</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">2,300万ユーザー</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">専任アドバイザー</span>
               </div>
             </div>
             {/* Item 4セット */}
             <div className="flex items-center gap-8 px-4">
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">手数料0円〜</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">仲介手数料0円〜</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">NASDAQ上場企業</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">アプリ・システム特化</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">金融庁登録業者</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">累計成約実績500件超</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">最短5分で開設</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">最短5分で査定</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">2,300万ユーザー</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">専任アドバイザー</span>
               </div>
             </div>
           </div>
@@ -167,14 +171,14 @@ export default function Home() {
             <div>
               <h2 className="text-[42px] lg:text-[48px] font-bold leading-[1.3] mb-12 text-center">
                 安心と信頼の<br />
-                moomoo証券
+                AppExit
               </h2>
 
               {/* App Icon Stack Placeholder */}
               <div className="relative w-[380px] h-[280px] flex items-center justify-center">
                 <img 
                   src="/app.png" 
-                  alt="moomooアプリアイコン" 
+                  alt="AppExitロゴ" 
                   className="w-[280px] h-auto object-contain"
                 />
               </div>
@@ -190,13 +194,13 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18M4 18h16M6 18V9M18 18V9M8 21V12h8v9M12 2l10 7H2l10-7z"/>
                     </svg>
                   </span>
-                  金融庁の登録業者
+                  アプリ・システム専門家
                 </h3>
                 <p className="text-gray-700 text-[15px] leading-[1.8] pl-[40px]">
-                  当社は金融庁より金融商品取引業者第一種、第二種、投資助言、投資運用業の登録を受けた日本国内の証券会社です。
+                  当社はアプリ・システムに特化したM&A仲介サービスを提供しています。IT業界での豊富な経験を持つ専門家が、お客様の案件を徹底的にサポートします。
                 </p>
                 <p className="text-gray-500 text-[13px] mt-2 pl-[40px]">
-                  金融商品取引業者登録：関東財務局（金商）第3335号
+                  累計成約実績：500件以上（2024年3月時点）
                 </p>
               </div>
 
@@ -209,10 +213,10 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4"/>
                     </svg>
                   </span>
-                  安心の信託保全
+                  安心の完全成功報酬制
                 </h3>
                 <p className="text-gray-700 text-[15px] leading-[1.8] pl-[40px]">
-                  お客様からお預かりした資金は専用信託口座で分別管理しています。また、当社は投資者保護基金に加入しています。
+                  初期費用0円、着手金0円。成約するまで一切費用はかかりません。お客様のリスクを最小限に抑え、安心してM&Aを進めることができます。
                 </p>
               </div>
 
@@ -226,10 +230,10 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-1.5 2.5-1.5 6.5 0 9m0 0c1.5 2.5 1.5 6.5 0 9m0-9c-1.5-2.5-1.5-6.5 0-9m0 18c1.5-2.5 1.5-6.5 0-9"/>
                     </svg>
                   </span>
-                  NASDAQ上場のグローバル企業
+                  全国対応・豊富なネットワーク
                 </h3>
                 <p className="text-gray-700 text-[15px] leading-[1.8] pl-[40px]">
-                  moomooアプリは米国で開発されました。moomoo証券は、米国NASDAQ上場のグローバル企業であるFutu Holdings limited (NASDAQ:FUTU)傘下であり、安心してお取引が可能です。
+                  全国のアプリ開発会社、投資家、買い手企業とのネットワークを活用し、お客様に最適なマッチングを実現します。オンライン対応で全国どこからでもご利用可能です。
                 </p>
               </div>
             </div>
@@ -244,7 +248,7 @@ export default function Home() {
             <div className="bg-[#0C3765] text-white w-16 h-16 flex items-center justify-center text-3xl font-bold transform rotate-45">
               <span className="transform -rotate-45">1</span>
             </div>
-            <h2 className="text-4xl font-bold">業界最安級の手数料0円〜</h2>
+            <h2 className="text-4xl font-bold">業界最安級の仲介手数料0円〜</h2>
           </div>
 
           <div className="overflow-x-auto">
@@ -309,7 +313,7 @@ export default function Home() {
       <section className="py-16 lg:py-24 bg-gradient-to-b from-[#F2F4F8] to-[#E8ECF1]">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">
-            moomoo証券が選ばれる<span className="text-[#0C3765]">3</span>つの理由
+            AppExitが選ばれる<span className="text-[#0C3765]">3</span>つの理由
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -317,13 +321,11 @@ export default function Home() {
             <div className="bg-white rounded-3xl p-8 border-2 border-gray-300">
               <div className="flex items-start gap-3 mb-6">
                 <span className="text-5xl font-bold text-[#0C3765]">1.</span>
-                <h3 className="text-xl font-bold pt-2">業界最安級手数料0円〜</h3>
+                <h3 className="text-xl font-bold pt-2">業界最安級仲介手数料0円〜</h3>
               </div>
               <div className="flex justify-center">
                 <div className="w-32 h-32 bg-[#F2F4F8] rounded-full flex items-center justify-center">
-                  {/* アイコン画像スペース */}
-                  <div className="text-7xl font-bold text-[#0C3765]">0</div>
-                  <span className="text-3xl font-bold text-[#0C3765]">円</span>
+                  <img src="/1.png" alt="業界最安級手数料" className="w-full h-full object-cover rounded-full" />
                 </div>
               </div>
             </div>
@@ -332,15 +334,11 @@ export default function Home() {
             <div className="bg-white rounded-3xl p-8 border-2 border-gray-300">
               <div className="flex items-start gap-3 mb-6">
                 <span className="text-5xl font-bold text-[#0C3765]">2.</span>
-                <h3 className="text-xl font-bold pt-2">少額から取引可能</h3>
+                <h3 className="text-xl font-bold pt-2">スピード査定・成約</h3>
               </div>
               <div className="flex justify-center">
                 <div className="w-32 h-32 bg-[#F2F4F8] rounded-full flex items-center justify-center relative">
-                  {/* アイコン画像スペース */}
-                  <div className="text-5xl">💰</div>
-                  <div className="absolute -top-2 -right-2 bg-[#0C3765] text-white rounded-full px-3 py-1 text-xs font-bold">
-                    ひと株<br />購入OK!
-                  </div>
+                  <img src="/2.png" alt="スピード査定" className="w-full h-full object-cover rounded-full" />
                 </div>
               </div>
             </div>
@@ -350,14 +348,13 @@ export default function Home() {
               <div className="flex items-start gap-3 mb-6">
                 <span className="text-5xl font-bold text-[#0C3765]">3.</span>
                 <h3 className="text-xl font-bold pt-2">
-                  多機能アプリ！<br />
-                  銘柄選定・分析・取引
+                  アプリ・システム<br />
+                  専門のアドバイザー
                 </h3>
               </div>
               <div className="flex justify-center">
                 <div className="w-32 h-32 bg-[#F2F4F8] rounded-full flex items-center justify-center">
-                  {/* アイコン画像スペース */}
-                  <div className="text-4xl">📊</div>
+                  <img src="/3.png" alt="専門アドバイザー" className="w-full h-full object-cover rounded-full" />
                 </div>
               </div>
             </div>
@@ -370,12 +367,12 @@ export default function Home() {
         <div className="max-w-[1200px] mx-auto px-8">
           {/* Header */}
           <div className="text-center mb-8">
-            <h2 className="text-[42px] lg:text-[48px] font-bold mb-4">
-              moomoo証券について
+            <h2 className="text-[42px] lg:text-[48px] font-bold mb-4 text-[#323232]">
+              AppExitについて
             </h2>
-            <p className="text-gray-700 text-[15px] lg:text-[16px] leading-relaxed max-w-[900px] mx-auto">
-              moomooアプリは米国で開発され、親会社がNASDAQ上場、今や全世界2,300万以上のユーザーにご利用いただいています。<br />
-              初心者の方からプロのトレーダーまで使いやすいように工夫を凝らし、幅広い方々から高い評価をいただいています。
+            <p className="text-[#323232] text-[15px] lg:text-[16px] leading-relaxed max-w-[900px] mx-auto">
+              AppExitはアプリ・システム専門のM&A仲介サービスです。累計500件以上の成約実績を誇り、豊富なネットワークと専門知識で最適なM&Aをサポートいたします。<br />
+              個人開発者から中小企業まで、幅広いお客様から高い評価をいただいています。
             </p>
           </div>
 
@@ -384,7 +381,7 @@ export default function Home() {
             <div className="w-full rounded-[30px] overflow-hidden">
               <img 
                 src="/baner.png" 
-                alt="moomoo証券について" 
+                alt="AppExitについて" 
                 className="w-full h-[300px] lg:h-[400px] object-cover"
               />
             </div>
@@ -398,10 +395,10 @@ export default function Home() {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-[42px] lg:text-[48px] font-bold mb-4">
-              簡単<span className="text-[#0C3765]">3 STEP</span>！口座開設
+              簡単<span className="text-[#0C3765]">3 STEP</span>！M&A成約まで
             </h2>
             <p className="text-gray-600 text-[16px]">
-              最短で翌営業日に口座開設完了・取引開始
+              最短で1週間以内に査定結果・マッチング開始
             </p>
           </div>
 
@@ -419,20 +416,16 @@ export default function Home() {
               </div>
 
               {/* Icon Placeholder */}
-              <div className="flex justify-center mb-8">
-                <div className="w-[120px] h-[120px] flex items-center justify-center">
-                  {/* アイコン画像スペース - スマホと手 */}
-                  <svg className="w-24 h-24 text-[#0C3765]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <rect x="5" y="2" width="14" height="20" rx="2" strokeWidth="2"/>
-                    <path d="M9 18h6" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
+              <div className="flex justify-center">
+                <div className="w-[180px] h-[180px] flex items-center justify-center">
+                  <img src="/1.png" alt="STEP 1" className="w-full h-full object-contain" />
                 </div>
               </div>
 
               {/* Text */}
               <h3 className="text-[20px] font-bold text-center leading-[1.6]">
                 メールアドレスまたは<br />
-                携帯番号を登録
+                携帯番号で登録
               </h3>
             </div>
 
@@ -448,25 +441,16 @@ export default function Home() {
               </div>
 
               {/* Icon Placeholder */}
-              <div className="flex justify-center mb-8 relative">
-                <div className="w-[120px] h-[120px] flex items-center justify-center">
-                  {/* アイコン画像スペース - 書類 */}
-                  <svg className="w-24 h-24 text-[#0C3765]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 12h6M9 16h6M9 8h6M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                  {/* チェックマーク */}
-                  <div className="absolute bottom-2 right-2 bg-[#0C3765] rounded-full w-10 h-10 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path d="M5 13l4 4L19 7" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
+              <div className="flex justify-center relative">
+                <div className="w-[180px] h-[180px] flex items-center justify-center">
+                  <img src="/2.png" alt="STEP 2" className="w-full h-full object-contain" />
                 </div>
               </div>
 
               {/* Text */}
               <h3 className="text-[20px] font-bold text-center leading-[1.6]">
-                申込みフォームを<br />
-                入力・必要書類を提出
+                アプリ情報を入力<br />
+                無料で査定依頼
               </h3>
             </div>
 
@@ -482,26 +466,16 @@ export default function Home() {
               </div>
 
               {/* Icon Placeholder */}
-              <div className="flex justify-center mb-8 relative">
-                <div className="w-[120px] h-[120px] flex items-center justify-center">
-                  {/* アイコン画像スペース - スマホとダウンロード */}
-                  <svg className="w-24 h-24 text-[#0C3765]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <rect x="5" y="2" width="14" height="20" rx="2" strokeWidth="2"/>
-                    <path d="M12 6v7m0 0l-3-3m3 3l3-3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  {/* チェックマーク */}
-                  <div className="absolute bottom-2 right-2 bg-[#0C3765] rounded-full w-10 h-10 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path d="M5 13l4 4L19 7" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
+              <div className="flex justify-center relative">
+                <div className="w-[180px] h-[180px] flex items-center justify-center">
+                  <img src="/3.png" alt="STEP 3" className="w-full h-full object-contain" />
                 </div>
               </div>
 
               {/* Text */}
               <h3 className="text-[20px] font-bold text-center leading-[1.6]">
-                口座開設完了！無料で<br />
-                アプリをダウンロード
+                マッチング・交渉<br />
+                M&A成約へ
               </h3>
             </div>
           </div>
