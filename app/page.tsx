@@ -1,4 +1,44 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Home() {
+  const [activeTab, setActiveTab] = useState('email');
+  const [formData, setFormData] = useState({
+    email: '',
+    phone: '',
+    countryCode: '+81'
+  });
+
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleSubmit = () => {
+    if (activeTab === 'email' && formData.email) {
+      console.log('Email submitted:', formData.email);
+      // ここで実際の処理を行う
+    } else if (activeTab === 'phone' && formData.phone) {
+      console.log('Phone submitted:', formData.countryCode + formData.phone);
+      // ここで実際の処理を行う
+    }
+  };
+
+  const isFormValid = () => {
+    if (activeTab === 'email') {
+      return formData.email.includes('@');
+    } else {
+      return formData.phone.length >= 10;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Section 1: Hero Section */}
@@ -16,9 +56,10 @@ export default function Home() {
           <div className="grid lg:grid-cols-[1fr_480px] gap-12 items-start">
             {/* Left Content */}
             <div className="relative pt-8">
-              <h1 className="text-[56px] lg:text-[64px] font-bold mb-6 leading-[1.2] tracking-tight">
-                No.1 アプリM&A<br />
-                仲介手数料 <span className="text-[100px] lg:text-[120px] inline-block leading-[1]">0</span>円〜
+              <h1 className="text-[64px] lg:text-[72px] font-bold mb-6 leading-[1.4] tracking-tight">
+                アプリで事業を<br />
+                売却・買収する<br />
+                <span className="text-[110px] lg:text-[130px] inline-block leading-[1]">最</span>適解
               </h1>
 
               {/* Badge */}
@@ -36,37 +77,78 @@ export default function Home() {
 
               {/* Footer Text */}
               <p className="text-[11px] leading-[1.6] opacity-95 max-w-[600px] relative z-10">
-                ※比較対象範囲：国内主要アプリM&A仲介サービス上位5社（A社、B社、C社、D社、E社）の<br />
-                成約実績、手数料体系、サポート体制を比較。集計期間 2023/12/10〜2024/03/22<br />
-                (AppExit調べ)
+                ※POC段階から本格事業化まで、企業の成長フェーズに合わせた柔軟な料金体系<br />
+                自社開発実績によるセキュリティチェック・品質担保で安心のサポート<br />
+                最短24時間以内の打ち合わせ設定で迅速対応
               </p>
             </div>
 
             {/* Right Form */}
             <div className="bg-white rounded-[20px] p-9 shadow-[0_8px_30px_rgba(50,50,50,0.12)] mt-8">
               <div className="flex gap-6 mb-8 border-b border-gray-200">
-                <button className="pb-3 border-b-[3px] border-[#0C3765] text-[#0C3765] font-semibold text-[15px]">
+                <button 
+                  onClick={() => handleTabChange('email')}
+                  className={`pb-3 font-semibold text-[15px] ${
+                    activeTab === 'email' 
+                      ? 'border-b-[3px] border-[#0C3765] text-[#0C3765]' 
+                      : 'text-gray-400'
+                  }`}
+                >
                   メールアドレス
                 </button>
-                <button className="pb-3 text-gray-400 font-semibold text-[15px]">
+                <button 
+                  onClick={() => handleTabChange('phone')}
+                  className={`pb-3 font-semibold text-[15px] ${
+                    activeTab === 'phone' 
+                      ? 'border-b-[3px] border-[#0C3765] text-[#0C3765]' 
+                      : 'text-gray-400'
+                  }`}
+                >
                   電話
                 </button>
               </div>
 
               <div className="mb-8">
-                <div className="flex gap-2">
-                  <select className="border border-gray-300 rounded-[10px] px-4 py-[14px] w-[90px] text-[15px] bg-white cursor-pointer focus:outline-none focus:border-gray-400">
-                    <option>+81</option>
-                  </select>
+                {activeTab === 'email' ? (
                   <input
-                    type="text"
-                    placeholder="例）090 1234 5678"
-                    className="flex-1 border border-gray-300 rounded-[10px] px-4 py-[14px] text-[15px] placeholder:text-gray-400 focus:outline-none focus:border-gray-400"
+                    type="email"
+                    placeholder="例）example@company.com"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    className="w-full border border-gray-300 rounded-[10px] px-4 py-[14px] text-[15px] placeholder:text-gray-400 focus:outline-none focus:border-gray-400"
                   />
-                </div>
+                ) : (
+                  <div className="flex gap-2">
+                    <select 
+                      value={formData.countryCode}
+                      onChange={(e) => handleInputChange('countryCode', e.target.value)}
+                      className="border border-gray-300 rounded-[10px] px-4 py-[14px] w-[90px] text-[15px] bg-white cursor-pointer focus:outline-none focus:border-gray-400"
+                    >
+                      <option value="+81">+81</option>
+                      <option value="+1">+1</option>
+                      <option value="+86">+86</option>
+                      <option value="+82">+82</option>
+                    </select>
+                    <input
+                      type="tel"
+                      placeholder="例）090 1234 5678"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      className="flex-1 border border-gray-300 rounded-[10px] px-4 py-[14px] text-[15px] placeholder:text-gray-400 focus:outline-none focus:border-gray-400"
+                    />
+                  </div>
+                )}
               </div>
 
-              <button className="w-full bg-[#D4E1ED] text-[#7B9DBD] rounded-full py-[16px] font-semibold text-[16px] mb-6 cursor-not-allowed">
+              <button 
+                onClick={handleSubmit}
+                disabled={!isFormValid()}
+                className={`w-full rounded-full py-[16px] font-semibold text-[16px] mb-6 transition-colors ${
+                  isFormValid() 
+                    ? 'bg-[#0C3765] text-white cursor-pointer hover:bg-[#0a2d52]' 
+                    : 'bg-[#D4E1ED] text-[#7B9DBD] cursor-not-allowed'
+                }`}
+              >
                 次へ
               </button>
 
@@ -90,73 +172,73 @@ export default function Home() {
             {/* Item 1セット */}
             <div className="flex items-center gap-8 px-4">
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">仲介手数料0円〜</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">自社開発実績による品質担保</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">アプリ・システム特化</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">セキュリティチェック体制</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">累計成約実績500件超</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">POC〜本格事業化まで対応</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">最短5分で査定</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">最短24時間で打ち合わせ</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">専任アドバイザー</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">丸投げ対応可能</span>
               </div>
             </div>
             {/* Item 2セット */}
             <div className="flex items-center gap-8 px-4">
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">仲介手数料0円〜</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">自社開発実績による品質担保</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">アプリ・システム特化</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">セキュリティチェック体制</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">累計成約実績500件超</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">POC〜本格事業化まで対応</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">最短5分で査定</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">最短24時間で打ち合わせ</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">専任アドバイザー</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">丸投げ対応可能</span>
               </div>
             </div>
             {/* Item 3セット */}
             <div className="flex items-center gap-8 px-4">
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">仲介手数料0円〜</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">自社開発実績による品質担保</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">アプリ・システム特化</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">セキュリティチェック体制</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">累計成約実績500件超</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">POC〜本格事業化まで対応</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">最短5分で査定</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">最短24時間で打ち合わせ</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">専任アドバイザー</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">丸投げ対応可能</span>
               </div>
             </div>
             {/* Item 4セット */}
             <div className="flex items-center gap-8 px-4">
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">仲介手数料0円〜</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">自社開発実績による品質担保</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">アプリ・システム特化</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">セキュリティチェック体制</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">累計成約実績500件超</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">POC〜本格事業化まで対応</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">最短5分で査定</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">最短24時間で打ち合わせ</span>
               </div>
               <div className="bg-white rounded-[12px] px-8 py-4 shadow-sm border border-gray-200">
-                <span className="text-[#0C3765] font-bold text-[18px]">専任アドバイザー</span>
+                <span className="text-[#0C3765] font-bold text-[18px]">丸投げ対応可能</span>
               </div>
             </div>
           </div>
@@ -164,13 +246,22 @@ export default function Home() {
       </section>
 
       {/* Section 2: Trust and Safety */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-28 bg-white relative">
+        {/* Back Image - Bottom Left */}
+        <div className="absolute top-3 left-1 w-[240px] h-[240px] pointer-events-none z-10">
+          <img
+            src="/back.png"
+            alt="背景装飾"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        
         <div className="max-w-[1200px] mx-auto px-8">
           <div className="grid lg:grid-cols-[450px_1fr] gap-16 items-center">
             {/* Left - Title and App Icons */}
             <div>
               <h2 className="text-[42px] lg:text-[48px] font-bold leading-[1.3] mb-12 text-center">
-                安心と信頼の<br />
+                企業が選ぶ<br />
                 AppExit
               </h2>
 
@@ -194,13 +285,13 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18M4 18h16M6 18V9M18 18V9M8 21V12h8v9M12 2l10 7H2l10-7z"/>
                     </svg>
                   </span>
-                  アプリ・システム専門家
+                  自社開発実績による品質担保
                 </h3>
                 <p className="text-gray-700 text-[15px] leading-[1.8] pl-[40px]">
-                  当社はアプリ・システムに特化したM&A仲介サービスを提供しています。IT業界での豊富な経験を持つ専門家が、お客様の案件を徹底的にサポートします。
+                  自社でもアプリ・システム開発を行っているため、技術的な品質評価やセキュリティチェックを適切に実施できます。企業様の大切な資産を正確に評価いたします。
                 </p>
                 <p className="text-gray-500 text-[13px] mt-2 pl-[40px]">
-                  累計成約実績：500件以上（2024年3月時点）
+                  自社開発実績：50件以上のアプリ・システム開発経験
                 </p>
               </div>
 
@@ -213,10 +304,10 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4"/>
                     </svg>
                   </span>
-                  安心の完全成功報酬制
+                  POC〜本格事業化まで柔軟対応
                 </h3>
                 <p className="text-gray-700 text-[15px] leading-[1.8] pl-[40px]">
-                  初期費用0円、着手金0円。成約するまで一切費用はかかりません。お客様のリスクを最小限に抑え、安心してM&Aを進めることができます。
+                  概念実証（POC）段階から本格的な事業化まで、企業の成長フェーズに合わせた柔軟な料金体系とサポートを提供。予算に応じて最適なプランをご提案します。
                 </p>
               </div>
 
@@ -230,10 +321,10 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-1.5 2.5-1.5 6.5 0 9m0 0c1.5 2.5 1.5 6.5 0 9m0-9c-1.5-2.5-1.5-6.5 0-9m0 18c1.5-2.5 1.5-6.5 0-9"/>
                     </svg>
                   </span>
-                  全国対応・豊富なネットワーク
+                  迅速対応・丸投げ可能
                 </h3>
                 <p className="text-gray-700 text-[15px] leading-[1.8] pl-[40px]">
-                  全国のアプリ開発会社、投資家、買い手企業とのネットワークを活用し、お客様に最適なマッチングを実現します。オンライン対応で全国どこからでもご利用可能です。
+                  最短24時間以内の打ち合わせ設定で迅速対応。企業様のリソース不足にも対応し、プロジェクト全体を丸投げいただくことも可能です。専任チームが責任を持ってサポートします。
                 </p>
               </div>
             </div>
@@ -248,7 +339,7 @@ export default function Home() {
             <div className="bg-[#0C3765] text-white w-16 h-16 flex items-center justify-center text-3xl font-bold transform rotate-45">
               <span className="transform -rotate-45">1</span>
             </div>
-            <h2 className="text-4xl font-bold">業界最安級の仲介手数料0円〜</h2>
+            <h2 className="text-4xl font-bold">企業のニーズに応える柔軟なサービス</h2>
           </div>
 
           <div className="overflow-x-auto">
@@ -267,41 +358,41 @@ export default function Home() {
                 </tr>
               </thead>
               <tbody>
-                {/* Row 1 - アプリ売却 */}
+                {/* Row 1 - POC対応 */}
                 <tr className="border-b">
-                  <td className="p-6 font-semibold text-gray-700">アプリ売却</td>
-                  <td className="p-6 bg-[#F2F4F8] border-x-4 border-[#0C3765] text-center">
-                    <div className="text-5xl font-bold text-[#0C3765]">◎</div>
-                  </td>
-                  <td className="p-6 text-center text-3xl">○</td>
-                  <td className="p-6 text-center text-3xl">△</td>
-                </tr>
-                {/* Row 2 - スピード感 */}
-                <tr className="border-b">
-                  <td className="p-6 font-semibold text-gray-700">スピード感</td>
+                  <td className="p-6 font-semibold text-gray-700">POC対応</td>
                   <td className="p-6 bg-[#F2F4F8] border-x-4 border-[#0C3765] text-center">
                     <div className="text-5xl font-bold text-[#0C3765]">◎</div>
                   </td>
                   <td className="p-6 text-center text-3xl">△</td>
-                  <td className="p-6 text-center text-3xl">○</td>
+                  <td className="p-6 text-center text-3xl">△</td>
                 </tr>
-                {/* Row 3 - ITリテラシー */}
+                {/* Row 2 - 本格事業化対応 */}
                 <tr className="border-b">
-                  <td className="p-6 font-semibold text-gray-700">ITリテラシー</td>
+                  <td className="p-6 font-semibold text-gray-700">本格事業化対応</td>
                   <td className="p-6 bg-[#F2F4F8] border-x-4 border-[#0C3765] text-center">
                     <div className="text-5xl font-bold text-[#0C3765]">◎</div>
                   </td>
                   <td className="p-6 text-center text-3xl">○</td>
+                  <td className="p-6 text-center text-3xl">○</td>
+                </tr>
+                {/* Row 3 - セキュリティチェック */}
+                <tr className="border-b">
+                  <td className="p-6 font-semibold text-gray-700">セキュリティチェック</td>
+                  <td className="p-6 bg-[#F2F4F8] border-x-4 border-[#0C3765] text-center">
+                    <div className="text-5xl font-bold text-[#0C3765]">◎</div>
+                  </td>
+                  <td className="p-6 text-center text-3xl">△</td>
                   <td className="p-6 text-center text-3xl">△</td>
                 </tr>
-                {/* Row 4 - アプリ以外のM&A */}
+                {/* Row 4 - 丸投げ対応 */}
                 <tr className="border-b">
-                  <td className="p-6 font-semibold text-gray-700">アプリ以外のM&A</td>
+                  <td className="p-6 font-semibold text-gray-700">丸投げ対応</td>
                   <td className="p-6 bg-[#F2F4F8] border-x-4 border-b-4 border-[#0C3765] text-center">
-                    <div className="text-5xl font-bold text-[#0C3765]">○</div>
+                    <div className="text-5xl font-bold text-[#0C3765]">◎</div>
                   </td>
-                  <td className="p-6 text-center text-3xl">◎</td>
-                  <td className="p-6 text-center text-3xl">◎</td>
+                  <td className="p-6 text-center text-3xl">△</td>
+                  <td className="p-6 text-center text-3xl">△</td>
                 </tr>
               </tbody>
             </table>
@@ -321,7 +412,7 @@ export default function Home() {
             <div className="bg-white rounded-3xl p-8 border-2 border-gray-300">
               <div className="flex items-start gap-3 mb-6">
                 <span className="text-5xl font-bold text-[#0C3765]">1.</span>
-                <h3 className="text-xl font-bold pt-2">業界最安級仲介手数料0円〜</h3>
+                <h3 className="text-xl font-bold pt-2">自社開発実績による品質担保</h3>
               </div>
               <div className="flex justify-center">
                 <div className="w-32 h-32 bg-[#F2F4F8] rounded-full flex items-center justify-center">
@@ -334,7 +425,7 @@ export default function Home() {
             <div className="bg-white rounded-3xl p-8 border-2 border-gray-300">
               <div className="flex items-start gap-3 mb-6">
                 <span className="text-5xl font-bold text-[#0C3765]">2.</span>
-                <h3 className="text-xl font-bold pt-2">スピード査定・成約</h3>
+                <h3 className="text-xl font-bold pt-2">POC〜本格事業化まで対応</h3>
               </div>
               <div className="flex justify-center">
                 <div className="w-32 h-32 bg-[#F2F4F8] rounded-full flex items-center justify-center relative">
@@ -348,8 +439,8 @@ export default function Home() {
               <div className="flex items-start gap-3 mb-6">
                 <span className="text-5xl font-bold text-[#0C3765]">3.</span>
                 <h3 className="text-xl font-bold pt-2">
-                  アプリ・システム<br />
-                  専門のアドバイザー
+                  迅速対応・<br />
+                  丸投げ可能
                 </h3>
               </div>
               <div className="flex justify-center">
@@ -371,8 +462,8 @@ export default function Home() {
               AppExitについて
             </h2>
             <p className="text-[#323232] text-[15px] lg:text-[16px] leading-relaxed max-w-[900px] mx-auto">
-              AppExitはアプリ・システム専門のM&A仲介サービスです。累計500件以上の成約実績を誇り、豊富なネットワークと専門知識で最適なM&Aをサポートいたします。<br />
-              個人開発者から中小企業まで、幅広いお客様から高い評価をいただいています。
+              AppExitは企業のアプリ・システム開発・M&A専門サービスです。自社開発実績50件以上、累計成約実績500件以上を誇り、POC段階から本格事業化まで企業の成長フェーズに合わせた柔軟なサポートを提供いたします。<br />
+              セキュリティチェック体制と迅速な対応力で、多くの企業様から信頼をいただいています。丸投げ対応も可能で、リソース不足の企業様にも安心してご利用いただけます。
             </p>
           </div>
 
@@ -390,7 +481,16 @@ export default function Home() {
       </section>
 
       {/* Section 6: 3 Steps */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-28 bg-white relative">
+        {/* Back Image - Top Right */}
+        <div className="absolute top-8 right-8 w-[300px] h-[300px] pointer-events-none z-10">
+          <img
+            src="/back.png"
+            alt="背景装飾"
+            className="w-full h-full object-contain"
+          />
+        </div>
+        
         <div className="max-w-[1200px] mx-auto px-8">
           {/* Header */}
           <div className="text-center mb-16">
