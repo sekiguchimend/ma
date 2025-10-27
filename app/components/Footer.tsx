@@ -10,10 +10,10 @@ export default function Footer() {
 
           {/* Section Links */}
           <div className="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6 text-[12px] sm:text-[13px] md:text-[14px]">
-            <a href="#" className="text-gray-600 hover:text-[#0C3765] transition-colors">サービス</a>
-            <a href="#" className="text-gray-600 hover:text-[#0C3765] transition-colors">選ばれる理由</a>
-            <a href="#" className="text-gray-600 hover:text-[#0C3765] transition-colors">ご利用の流れ</a>
-            <a href="#" className="text-gray-600 hover:text-[#0C3765] transition-colors">FAQ</a>
+            <a href="#service" className="text-gray-600 hover:text-[#0C3765] transition-colors">サービス</a>
+            <a href="#reasons" className="text-gray-600 hover:text-[#0C3765] transition-colors">選ばれる理由</a>
+            <a href="#steps" className="text-gray-600 hover:text-[#0C3765] transition-colors">ご利用の流れ</a>
+            <a href="#faq" className="text-gray-600 hover:text-[#0C3765] transition-colors">FAQ</a>
           </div>
 
           {/* SNS Links */}

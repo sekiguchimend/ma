@@ -57,9 +57,9 @@ export default function HeroSection({
 
             {/* Footer Text */}
             <p className="hidden md:block text-[11px] leading-[1.6] opacity-95 max-w-[600px] relative z-10">
-              ※POC段階から本格事業化まで、企業の成長フェーズに合わせた柔軟な料金体系<br />
-              自社開発実績によるセキュリティチェック・品質担保で安心のサポート<br />
-              最短24時間以内の打ち合わせ設定で迅速対応
+              ※アプリ・SaaS・Webサービスに特化したM&A支援で豊富な実績<br />
+              IT企業としての総合技術力でコードレビュー・セキュリティチェックまで一括対応<br />
+              お問い合わせから30分以内に初回返信で迅速対応
             </p>
           </div>
 

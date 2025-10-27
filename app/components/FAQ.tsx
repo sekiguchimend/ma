@@ -30,11 +30,19 @@ export default function FAQ({ openFaqIndex, onToggle }: FAQProps) {
     {
       question: 'キャンセルは可能ですか？',
       answer: 'はい、可能です。成約前であればいつでもキャンセルいただけます。完全成功報酬型のため、キャンセル料や違約金は一切発生いたしません。お客様のご都合に合わせて柔軟に対応させていただきます。'
+    },
+    {
+      question: '保守運用もお願いできますか？',
+      answer: 'はい、承っております。M&A成約後の保守運用・メンテナンス業務も対応可能です。システムの安定稼働、セキュリティアップデート、機能追加・改修など、継続的なサポートを提供いたします。買い手企業様のご要望に応じて、運用体制の構築から技術移管まで幅広くサポートいたします。'
+    },
+    {
+      question: '資料作成などのサポートはありますか？',
+      answer: '充実した資料作成サポートを提供しております。事業計画書、技術仕様書、財務資料、プレゼンテーション資料など、M&Aに必要な各種資料の作成をお手伝いいたします。また、買い手企業向けのピッチ資料や、デューデリジェンス対応資料の準備も専門スタッフがサポートいたします。'
     }
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-28 relative" style={{
+    <section id="faq" className="py-12 sm:py-16 md:py-20 lg:py-28 relative" style={{
       background: `
         radial-gradient(circle, rgba(12, 55, 101, 0.12) 2px, transparent 2px),
         linear-gradient(to bottom, #F2F4F8, #E8ECF1)

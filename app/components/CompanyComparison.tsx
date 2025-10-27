@@ -104,41 +104,41 @@ export default function CompanyComparison() {
               </tr>
             </thead>
             <tbody>
-              {/* Row 1 - POC対応 */}
+              {/* Row 1 - 事業の売却 */}
               <tr className="border-b">
-                <td className="p-3 sm:p-4 md:p-6 font-semibold text-gray-700 text-[13px] sm:text-[14px] md:text-[15px]">POC対応</td>
+                <td className="p-3 sm:p-4 md:p-6 font-semibold text-gray-700 text-[13px] sm:text-[14px] md:text-[15px]">事業の売却</td>
                 <td className="p-3 sm:p-4 md:p-6 bg-[#F2F4F8] border-x-2 sm:border-x-3 md:border-x-4 border-[#0C3765] text-center">
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0C3765]">◎</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0C3765]">△</div>
                 </td>
-                <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">△</td>
-                <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">△</td>
+                <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">◎</td>
+                <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">◎</td>
               </tr>
-              {/* Row 2 - 本格事業化対応 */}
+              {/* Row 2 - アプリの売却 */}
               <tr className="border-b">
-                <td className="p-3 sm:p-4 md:p-6 font-semibold text-gray-700 text-[13px] sm:text-[14px] md:text-[15px]">本格事業化対応</td>
+                <td className="p-3 sm:p-4 md:p-6 font-semibold text-gray-700 text-[13px] sm:text-[14px] md:text-[15px]">アプリの売却</td>
                 <td className="p-3 sm:p-4 md:p-6 bg-[#F2F4F8] border-x-2 sm:border-x-3 md:border-x-4 border-[#0C3765] text-center">
                   <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0C3765]">◎</div>
                 </td>
                 <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">○</td>
                 <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">○</td>
               </tr>
-              {/* Row 3 - セキュリティチェック */}
+              {/* Row 3 - スピード感 */}
               <tr className="border-b">
-                <td className="p-3 sm:p-4 md:p-6 font-semibold text-gray-700 text-[13px] sm:text-[14px] md:text-[15px]">セキュリティチェック</td>
+                <td className="p-3 sm:p-4 md:p-6 font-semibold text-gray-700 text-[13px] sm:text-[14px] md:text-[15px]">スピード感</td>
                 <td className="p-3 sm:p-4 md:p-6 bg-[#F2F4F8] border-x-2 sm:border-x-3 md:border-x-4 border-[#0C3765] text-center">
                   <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0C3765]">◎</div>
                 </td>
-                <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">△</td>
-                <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">△</td>
+                <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">◎</td>
+                <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">○</td>
               </tr>
-              {/* Row 4 - 丸投げ対応 */}
+              {/* Row 4 - 売却後サポート */}
               <tr className="border-b">
-                <td className="p-3 sm:p-4 md:p-6 font-semibold text-gray-700 text-[13px] sm:text-[14px] md:text-[15px]">丸投げ対応</td>
+                <td className="p-3 sm:p-4 md:p-6 font-semibold text-gray-700 text-[13px] sm:text-[14px] md:text-[15px]">売却後サポート</td>
                 <td className="p-3 sm:p-4 md:p-6 bg-[#F2F4F8] border-x-2 border-b-2 sm:border-x-3 sm:border-b-3 md:border-x-4 md:border-b-4 border-[#0C3765] text-center">
                   <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0C3765]">◎</div>
                 </td>
-                <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">△</td>
-                <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">△</td>
+                <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">◎</td>
+                <td className="p-3 sm:p-4 md:p-6 text-center text-2xl sm:text-2xl md:text-3xl">◎</td>
               </tr>
             </tbody>
           </table>

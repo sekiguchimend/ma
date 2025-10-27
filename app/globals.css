@@ -5,6 +5,19 @@
   --foreground: #171717;
 }
 
+/* モバイルデバイス専用の色設定 */
+@media screen and (max-width: 768px) {
+  :root {
+    --foreground: #171717 !important;
+  }
+  
+  body {
+    color: #171717 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -13,10 +26,19 @@
   --font-noto-sans-jp: var(--font-noto-sans-jp);
 }
 
-@media (prefers-color-scheme: dark) {
+/* ダークモードの自動適用を無効化（モバイルでの色薄く見える問題対策） */
+@media (prefers-color-scheme: dark) and (min-width: 769px) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+/* モバイルデバイスでは常にライトモードを維持 */
+@media screen and (max-width: 768px) {
+  :root {
+    --background: #ffffff !important;
+    --foreground: #171717 !important;
   }
 }
 
@@ -68,5 +90,30 @@ body {
 .scroll-hint-animate {
   background-color: rgba(12, 55, 101, 0.6);
   animation: scrollHintPulse 1.5s ease-in-out infinite;
+}
+
+/* モバイルでの色薄く見える問題対策用クラス */
+.text-dark-mobile {
+  color: #171717 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .text-gray-700,
+  .text-gray-600,
+  .text-gray-800 {
+    color: #171717 !important;
+  }
+  
+  /* 任意値のTailwindクラス用 */
+  [class*="text-[#323232]"] {
+    color: #171717 !important;
+  }
+  
+  /* フォントレンダリングの最適化 */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 }
 

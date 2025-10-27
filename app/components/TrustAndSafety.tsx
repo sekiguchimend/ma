@@ -39,10 +39,10 @@ export default function TrustAndSafety() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18M4 18h16M6 18V9M18 18V9M8 21V12h8v9M12 2l10 7H2l10-7z"/>
                   </svg>
                 </span>
-                自社開発実績による品質担保
+                IT企業としての総合技術力
               </h3>
               <p className="text-gray-700 text-[13px] sm:text-[14px] md:text-[15px] leading-[1.8] pl-[28px] sm:pl-[34px] md:pl-[40px]">
-                自社でもアプリ・システム開発を行っているため、技術的な品質評価やセキュリティチェックを適切に実施できます。企業様の大切な資産を正確に評価いたします。
+                当社自身が複数のIT・SaaSプロダクトを開発・運営しており、コードレビュー・セキュリティーチェック・インフラ構成の評価まで一括で対応可能。技術面の説明やリスクを最小化します。
               </p>
               <p className="text-gray-500 text-[11px] sm:text-[12px] md:text-[13px] mt-1.5 sm:mt-2 pl-[28px] sm:pl-[34px] md:pl-[40px]">
                 自社開発実績：50件以上のアプリ・システム開発経験
@@ -58,10 +58,10 @@ export default function TrustAndSafety() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4"/>
                   </svg>
                 </span>
-                POC〜本格事業化まで柔軟対応
+                予算感に応じた最適マッチング
               </h3>
               <p className="text-gray-700 text-[13px] sm:text-[14px] md:text-[15px] leading-[1.8] pl-[28px] sm:pl-[34px] md:pl-[40px]">
-                概念実証（POC）段階から本格的な事業化まで、企業の成長フェーズに合わせた柔軟な料金体系とサポートを提供。予算に応じて最適なプランをご提案します。
+                個人の小規模アプリから、上場企業が導入する法人向けプロダクトまで、あらゆる規模・業種の案件を保有しています。買い手・売り手双方の意向を丁寧にヒアリングし、事業シナジーと価格バランスを両立したマッチングを実現します。
               </p>
             </div>
 
@@ -75,10 +75,10 @@ export default function TrustAndSafety() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-1.5 2.5-1.5 6.5 0 9m0 0c1.5 2.5 1.5 6.5 0 9m0-9c-1.5-2.5-1.5-6.5 0-9m0 18c1.5-2.5 1.5-6.5 0-9"/>
                   </svg>
                 </span>
-                迅速対応・丸投げ可能
+                安心・透明性のある取引プロセス
               </h3>
               <p className="text-gray-700 text-[13px] sm:text-[14px] md:text-[15px] leading-[1.8] pl-[28px] sm:pl-[34px] md:pl-[40px]">
-                最短24時間以内の打ち合わせ設定で迅速対応。企業様のリソース不足にも対応し、プロジェクト全体を丸投げいただくことも可能です。専任チームが責任を持ってサポートします。
+                秘密保持契約（NDA）締結のうえで、情報を厳格に管理。初回相談からクロージングまで、手数料・報酬体系を明確に開示し、信頼できる取引をお約束します。
               </p>
             </div>
           </div>
