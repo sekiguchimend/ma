@@ -42,12 +42,11 @@ export default function ThreeSteps() {
             </div>
 
             {/* Text */}
-            <h3 className="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-center leading-[1.6] text-[#2D3748]">
+            <h3 className="text-[24px] sm:text-[26px] md:text-[28px] font-bold text-center leading-[1.6] text-[#2D3748]">
               アプリ査定・登録
             </h3>
-            <p className="text-[13px] sm:text-[14px] md:text-[15px] text-gray-600 text-center mt-2 sm:mt-3 leading-relaxed">
-              売却したいアプリの詳細情報を登録し<br />
-              収益性や成長性を分析して査定します
+            <p className="text-[18px] sm:text-[19px] md:text-[20px] text-gray-600 text-center mt-2 sm:mt-3 leading-relaxed">
+              売却したいアプリの詳細情報を登録し収益性や成長性を分析して査定します。
             </p>
           </div>
 
@@ -70,12 +69,11 @@ export default function ThreeSteps() {
             </div>
 
             {/* Text */}
-            <h3 className="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-center leading-[1.6] text-[#2D3748]">
+            <h3 className="text-[24px] sm:text-[26px] md:text-[28px] font-bold text-center leading-[1.6] text-[#2D3748]">
               マッチング・交渉
             </h3>
-            <p className="text-[13px] sm:text-[14px] md:text-[15px] text-gray-600 text-center mt-2 sm:mt-3 leading-relaxed">
-              厳選された買い手候補とマッチングし<br />
-              条件交渉やオンライン面談を実施します
+            <p className="text-[18px] sm:text-[19px] md:text-[20px] text-gray-600 text-center mt-2 sm:mt-3 leading-relaxed">
+              厳選された買い手候補とマッチングし条件交渉やオンライン面談を実施します。
             </p>
           </div>
 
@@ -98,12 +96,11 @@ export default function ThreeSteps() {
             </div>
 
             {/* Text */}
-            <h3 className="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-center leading-[1.6] text-[#2D3748]">
+            <h3 className="text-[24px] sm:text-[26px] md:text-[28px] font-bold text-center leading-[1.6] text-[#2D3748]">
               契約締結・譲渡
             </h3>
-            <p className="text-[13px] sm:text-[14px] md:text-[15px] text-gray-600 text-center mt-2 sm:mt-3 leading-relaxed">
-              正式な譲渡契約を締結し<br />
-              安全で確実なM&A成約を完了します
+            <p className="text-[18px] sm:text-[19px] md:text-[20px] text-gray-600 text-center mt-2 sm:mt-3 leading-relaxed">
+              正式な譲渡契約を締結し安全で確実なM&A成約を完了します。
             </p>
           </div>
         </div>

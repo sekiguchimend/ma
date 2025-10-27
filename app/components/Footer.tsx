@@ -14,6 +14,7 @@ export default function Footer() {
             <a href="#reasons" className="text-gray-600 hover:text-[#0C3765] transition-colors">選ばれる理由</a>
             <a href="#steps" className="text-gray-600 hover:text-[#0C3765] transition-colors">ご利用の流れ</a>
             <a href="#faq" className="text-gray-600 hover:text-[#0C3765] transition-colors">FAQ</a>
+            <a href="/contact" className="text-gray-600 hover:text-[#0C3765] transition-colors">お問い合わせ</a>
           </div>
 
           {/* SNS Links */}

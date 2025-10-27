@@ -133,7 +133,7 @@ export default function HeroSection({
             </button>
 
             <div className="text-center text-[11px] sm:text-[12px] md:text-[13px] text-gray-600 mb-4 sm:mb-4.5 md:mb-5">
-              すでにアカウントをお持ちですか？ <a href="#" className="text-[#0C3765] hover:underline">ログイン</a>
+              すでにアカウントをお持ちですか？ <a href="#" className="text-[#0C3765] hover:underline">ログイン</a> | <a href="/contact" className="text-[#0C3765] hover:underline">お問い合わせ</a>
             </div>
 
             <div className="text-center text-[10px] sm:text-[10.5px] md:text-[11px] text-gray-500 leading-[1.6]">
