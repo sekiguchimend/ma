@@ -64,7 +64,7 @@ export default function HeroSection({
           </div>
 
           {/* Right Form */}
-          <div className="bg-white rounded-[20px] p-5 sm:p-5.5 md:p-6 shadow-[0_8px_30px_rgba(50,50,50,0.12)] mt-4 sm:mt-6 md:mt-8">
+          <div className="bg-white rounded-[20px] p-5 sm:p-5.5 md:p-6 shadow-[0_8px_30px_rgba(0,0,0,0.08)] mt-4 sm:mt-6 md:mt-8">
             <div className="flex gap-4 sm:gap-5 md:gap-6 mb-6 sm:mb-7 md:mb-8 border-b border-gray-200">
               <button
                 onClick={() => onTabChange('email')}
