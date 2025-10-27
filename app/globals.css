@@ -38,3 +38,35 @@ body {
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
+
+/* スクロールバーを隠す */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* タッチスクロールの改善 */
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* スクロールヒント背景色アニメーション */
+@keyframes scrollHintPulse {
+  0%, 100% {
+    background-color: rgba(12, 55, 101, 0.6);
+  }
+  50% {
+    background-color: rgba(12, 55, 101, 1);
+  }
+}
+
+.scroll-hint-animate {
+  background-color: rgba(12, 55, 101, 0.6);
+  animation: scrollHintPulse 1.5s ease-in-out infinite;
+}
+

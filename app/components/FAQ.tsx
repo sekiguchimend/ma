@@ -34,51 +34,51 @@ export default function FAQ({ openFaqIndex, onToggle }: FAQProps) {
   ];
 
   return (
-    <section className="py-20 lg:py-28 relative" style={{
+    <section className="py-12 sm:py-16 md:py-20 lg:py-28 relative" style={{
       background: `
         radial-gradient(circle, rgba(12, 55, 101, 0.12) 2px, transparent 2px),
         linear-gradient(to bottom, #F2F4F8, #E8ECF1)
       `,
       backgroundSize: '40px 40px, 100% 100%'
     }}>
-      <div className="max-w-[900px] mx-auto px-8 text-center">
+      <div className="max-w-[900px] mx-auto px-4 sm:px-6 md:px-8 text-center">
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-10 sm:mb-12 md:mb-14 lg:mb-16 text-center">
           <div className="flex flex-col justify-center">
-          <div className="text-[56px] lg:text-[64px] font-bold">
+          <div className="text-[40px] sm:text-[48px] md:text-[56px] lg:text-[64px] font-bold">
             <span className="text-[#0C3765]">F</span>
             <span className="text-gray-800">AQ</span>
           </div>
-          <h2 className="text-[32px] lg:text-[36px] font-bold">
+          <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold">
             よくある質問
           </h2>
           </div>
-          <p className="text-gray-600 text-[16px] text-center">
+          <p className="text-gray-600 text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] text-center">
             お客様からよくいただくご質問をまとめました
           </p>
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-[20px] overflow-hidden border-2 border-gray-200 shadow-sm"
+              className="bg-white rounded-[16px] sm:rounded-[18px] md:rounded-[20px] overflow-hidden border-2 border-gray-200 shadow-sm"
             >
               <button
                 onClick={() => onToggle(openFaqIndex === index ? null : index)}
-                className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
               >
-                <div className="flex items-center gap-4 flex-1">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0C3765] text-white flex items-center justify-center font-bold text-sm">
+                <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-1">
+                  <span className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-[#0C3765] text-white flex items-center justify-center font-bold text-[11px] sm:text-[12px] md:text-sm">
                     Q
                   </span>
-                  <span className="font-bold text-[18px] text-gray-800">
+                  <span className="font-bold text-[14px] sm:text-[16px] md:text-[18px] text-gray-800">
                     {faq.question}
                   </span>
                 </div>
                 <svg
-                  className={`w-6 h-6 text-[#0C3765] transition-transform ${
+                  className={`w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-[#0C3765] transition-transform flex-shrink-0 ml-2 ${
                     openFaqIndex === index ? 'rotate-180' : ''
                   }`}
                   fill="none"
@@ -89,12 +89,12 @@ export default function FAQ({ openFaqIndex, onToggle }: FAQProps) {
                 </svg>
               </button>
               {openFaqIndex === index && (
-                <div className="px-8 pb-6">
-                  <div className="flex items-start gap-4 pt-4 border-t border-gray-200">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-200 text-[#0C3765] flex items-center justify-center font-bold text-sm">
+                <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
+                  <div className="flex items-start gap-2 sm:gap-3 md:gap-4 pt-3 sm:pt-3.5 md:pt-4 border-t border-gray-200">
+                    <span className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-gray-200 text-[#0C3765] flex items-center justify-center font-bold text-[11px] sm:text-[12px] md:text-sm">
                       A
                     </span>
-                    <p className="text-gray-700 text-[15px] leading-[1.8] pt-1">
+                    <p className="text-gray-700 text-[13px] sm:text-[14px] md:text-[15px] leading-[1.8] pt-0.5 sm:pt-1">
                       {faq.answer}
                     </p>
                   </div>
@@ -105,11 +105,11 @@ export default function FAQ({ openFaqIndex, onToggle }: FAQProps) {
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 text-[15px] mb-4">
+        <div className="mt-8 sm:mt-10 md:mt-12 text-center">
+          <p className="text-gray-600 text-[13px] sm:text-[14px] md:text-[15px] mb-3 sm:mb-3.5 md:mb-4">
             その他のご質問がございましたら、お気軽にお問い合わせください
           </p>
-          <button className="inline-flex items-center bg-[#0C3765] text-white rounded-full px-12 py-4 font-bold text-[16px] hover:bg-[#0a2d52] transition-colors shadow-lg">
+          <button className="inline-flex items-center bg-[#0C3765] text-white rounded-full px-8 sm:px-10 md:px-12 py-3 sm:py-3.5 md:py-4 font-bold text-[14px] sm:text-[15px] md:text-[16px] hover:bg-[#0a2d52] transition-colors shadow-lg">
             無料で相談する
           </button>
         </div>
