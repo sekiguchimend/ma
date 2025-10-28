@@ -41,8 +41,8 @@ export default function Footer() {
         <div className="border-t border-gray-300 pt-4 sm:pt-5 md:pt-6">
           <div className="flex flex-col md:flex-row justify-center items-center gap-3 sm:gap-3.5 md:gap-4 text-[11px] sm:text-[12px] md:text-[13px]">
             <div className="flex gap-4 sm:gap-5 md:gap-6">
-              <a href="#" className="text-gray-500 hover:text-[#0C3765] transition-colors">プライバシーポリシー</a>
-              <a href="#" className="text-gray-500 hover:text-[#0C3765] transition-colors">利用規約</a>
+              <a href="/privacy-policy" className="text-gray-500 hover:text-[#0C3765] transition-colors">プライバシーポリシー</a>
+              <a href="/terms-of-service" className="text-gray-500 hover:text-[#0C3765] transition-colors">利用規約</a>
             </div>
             <span className="text-gray-400 hidden md:inline">|</span>
             <p className="text-gray-500">© 2024 AppExit. All rights reserved.</p>

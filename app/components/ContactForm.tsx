@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface ContactFormData {
   name: string;
@@ -9,6 +9,7 @@ interface ContactFormData {
   phone: string;
   subject: string;
   message: string;
+  csrfToken: string;
 }
 
 export default function ContactForm() {
@@ -18,10 +19,33 @@ export default function ContactForm() {
     company: '',
     phone: '',
     subject: '',
-    message: ''
+    message: '',
+    csrfToken: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // CSRFトークンを取得
+  useEffect(() => {
+    const fetchCsrfToken = async () => {
+      try {
+        const response = await fetch('/api/csrf');
+        if (response.ok) {
+          const data = await response.json();
+          setFormData(prev => ({
+            ...prev,
+            csrfToken: data.csrfToken
+          }));
+        }
+      } catch (error) {
+        console.error('CSRFトークンの取得に失敗しました:', error);
+        // CSRFトークンが取得できない場合はフォームを無効化
+        setSubmitStatus('error');
+      }
+    };
+
+    fetchCsrfToken();
+  }, []);
 
   const handleInputChange = (field: keyof ContactFormData, value: string) => {
     setFormData(prev => ({
@@ -31,9 +55,10 @@ export default function ContactForm() {
   };
 
   const isFormValid = () => {
-    return formData.name.trim() !== '' && 
-           formData.email.includes('@') && 
-           formData.message.trim() !== '';
+    return formData.name.trim() !== '' &&
+           /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
+           formData.message.trim() !== '' &&
+           formData.csrfToken !== '';
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
